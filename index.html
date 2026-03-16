@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Dry Cleaning — Premium Dry Cleaning & Tailoring in Lincoln Park</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#2563eb;--dark:#0f172a;--gray:#f8f9fa;--white:#ffffff;--text:#374151;--light-blue:#eff6ff;--border:#e5e7eb}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;background:var(--white);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;border-bottom:1px solid var(--border)}
+nav .logo{font-size:1.2rem;font-weight:700;color:var(--dark)}
+nav .logo span{color:var(--blue)}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul li a{color:var(--text);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}
+nav ul li a:hover{color:var(--blue)}
+nav .nav-cta{background:var(--blue);color:white;padding:.55rem 1.3rem;border-radius:8px;font-weight:600;font-size:.85rem;text-decoration:none;transition:background .3s}
+nav .nav-cta:hover{background:#1d4ed8}
+.mobile-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer}
+
+/* HERO */
+.hero{padding:10rem 2rem 5rem;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-text .tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--light-blue);color:var(--blue);padding:.35rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;margin-bottom:1.5rem}
+.hero-text h1{font-size:3.2rem;font-weight:700;color:var(--dark);line-height:1.15;margin-bottom:1rem}
+.hero-text h1 span{color:var(--blue)}
+.hero-text p{font-size:1.1rem;color:#6b7280;margin-bottom:2rem;max-width:460px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-blue{background:var(--blue);color:white;padding:.85rem 2rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-blue:hover{background:#1d4ed8;transform:translateY(-1px)}
+.btn-outline{border:2px solid var(--border);color:var(--dark);padding:.85rem 2rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .3s}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.hero-img{border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.hero-img img{width:100%;height:450px;object-fit:cover;display:block}
+.trust-bar{max-width:1200px;margin:0 auto;padding:2rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.6rem;color:#6b7280;font-size:.9rem;font-weight:500}
+.trust-item strong{color:var(--blue);font-size:1.1rem}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.section-header{text-align:center;max-width:550px;margin:0 auto 3rem}
+.section-header .label{color:var(--blue);font-size:.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:.5rem}
+.section-header h2{font-size:2.3rem;color:var(--dark);font-weight:700;margin-bottom:.75rem}
+.section-header p{color:#6b7280;font-size:1rem}
+
+/* SERVICES */
+.services{background:var(--gray)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.service-card{background:var(--white);padding:2rem;border-radius:12px;border:1px solid var(--border);transition:all .3s}
+.service-card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(37,99,235,.08)}
+.service-icon{width:48px;height:48px;background:var(--light-blue);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem}
+.service-card h3{font-size:1.15rem;color:var(--dark);font-weight:700;margin-bottom:.5rem}
+.service-card p{color:#6b7280;font-size:.9rem;line-height:1.7}
+
+/* ABOUT */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:center}
+.about-img{border-radius:12px;overflow:hidden}
+.about-img img{width:100%;height:380px;object-fit:cover;display:block}
+.about-text h2{font-size:2.2rem;color:var(--dark);font-weight:700;margin-bottom:1rem}
+.about-text p{color:#6b7280;font-size:.95rem;margin-bottom:1rem;line-height:1.8}
+.about-feature{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--light-blue);border-radius:8px;margin-top:1.25rem}
+.about-feature span{font-size:.9rem;color:var(--dark);font-weight:500}
+
+/* RATING */
+.rating-section{background:var(--blue);text-align:center;padding:4rem 2rem;border-radius:0}
+.rating-section .stars{font-size:2rem;color:#fbbf24;margin-bottom:.75rem;letter-spacing:3px}
+.rating-section h2{color:white;font-size:2.3rem;font-weight:700;margin-bottom:.5rem}
+.rating-section p{color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:2rem}
+.stats-row{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.stat-box{background:rgba(255,255,255,.12);padding:1.25rem 2.5rem;border-radius:12px}
+.stat-box .num{font-size:1.8rem;font-weight:700;color:white}
+.stat-box .label{font-size:.75rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-top:.2rem}
+
+/* LOCATION */
+.location{background:var(--gray)}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1000px;margin:0 auto}
+.loc-card{background:var(--white);padding:2rem;border-radius:12px;border:1px solid var(--border)}
+.loc-card h3{font-size:1.3rem;font-weight:700;color:var(--dark);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem}
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table tr{border-bottom:1px solid var(--border)}
+.hours-table tr:last-child{border:none}
+.hours-table td{padding:.55rem 0;font-size:.9rem}
+.hours-table .day{font-weight:600;color:var(--dark)}
+.hours-table .time{text-align:right;color:#6b7280}
+.hours-table .closed{color:#ef4444;font-weight:600}
+.contact-list{list-style:none}
+.contact-list li{padding:.7rem 0;border-bottom:1px solid var(--border);font-size:.9rem;display:flex;align-items:center;gap:.75rem}
+.contact-list li:last-child{border:none}
+.contact-list a{color:var(--blue);text-decoration:none;font-weight:600}
+.contact-list a:hover{text-decoration:underline}
+.payment-badge{margin-top:1.25rem;background:var(--light-blue);padding:.8rem 1rem;border-radius:8px;font-size:.85rem;color:var(--dark);text-align:center;font-weight:500}
+
+/* MAP */
+.map-wrap{max-width:1200px;margin:0 auto;padding:0 2rem 4rem}
+.map-wrap iframe{width:100%;height:320px;border:none;border-radius:12px;display:block}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.5);text-align:center;padding:2.5rem 2rem}
+footer .footer-name{font-size:1.2rem;font-weight:700;color:white;margin-bottom:.4rem}
+footer p{font-size:.85rem;margin-bottom:.3rem}
+footer .cdg{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem}
+footer .cdg a{color:var(--blue);text-decoration:none;font-weight:600}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{display:none}
+  .mobile-toggle{display:block}
+  .hero{grid-template-columns:1fr;padding:8rem 1.5rem 3rem;gap:2rem}
+  .hero-text h1{font-size:2.4rem}
+  .hero-img{order:-1}
+  .about-grid,.location-grid{grid-template-columns:1fr}
+  .section-header h2{font-size:1.9rem}
+  .hero-btns{flex-direction:column}
+  .hero-btns a{text-align:center}
+  .trust-bar{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Ultimate<span>DC</span></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#location">Hours</a></li>
+  </ul>
+  <a href="tel:7735284250" class="nav-cta">📞 Call Now</a>
+  <button class="mobile-toggle" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="tag">⭐ 4.5 Stars · 88+ Reviews on Yelp</div>
+    <h1>Your Neighborhood <span>Dry Cleaning</span> Experts</h1>
+    <p>Family-owned in DePaul / Lincoln Park. Expert dry cleaning, tailoring, alterations, and laundry — trusted by your neighbors.</p>
+    <div class="hero-btns">
+      <a href="tel:7735284250" class="btn-blue">📞 (773) 528-4250</a>
+      <a href="https://maps.google.com/?q=1158+W+Wrightwood+Ave+Chicago+IL+60614" class="btn-outline" target="_blank">Get Directions</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=900&q=80" alt="Professional dry cleaning garments on rack" loading="lazy">
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><strong>✓</strong> Family Owned</div>
+  <div class="trust-item"><strong>✓</strong> ASL Proficient</div>
+  <div class="trust-item"><strong>✓</strong> Apple Pay & Cards</div>
+  <div class="trust-item"><strong>✓</strong> Walk-ins Welcome</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="label">Services</div>
+    <h2>What We Offer</h2>
+    <p>Comprehensive garment care tailored to your needs.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">👔</div>
+      <h3>Dry Cleaning</h3>
+      <p>Professional cleaning for suits, dresses, coats, and delicate fabrics with eco-friendly solvents.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✂️</div>
+      <h3>Tailoring & Alterations</h3>
+      <p>Expert tailoring for the perfect fit — hemming, tapering, relining, and custom adjustments.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">👗</div>
+      <h3>Bridal & Formal Wear</h3>
+      <p>Specialized care for wedding gowns, tuxedos, and formal attire. Cleaning and preservation.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🧺</div>
+      <h3>Wash & Fold Laundry</h3>
+      <p>Drop off your everyday laundry and pick it up fresh, clean, and perfectly folded.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=800&q=80" alt="Clothing and garment care" loading="lazy">
+    </div>
+    <div class="about-text">
+      <div class="label" style="color:var(--blue);font-size:.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:.5rem">About Us</div>
+      <h2>Family-Owned, Community-Trusted</h2>
+      <p>Ultimate Dry Cleaning has served the Lincoln Park community with premium garment care rooted in craftsmanship and genuine personal attention.</p>
+      <p>Every piece that comes through our doors is treated as if it were our own — from everyday shirts to treasured wedding gowns.</p>
+      <div class="about-feature">
+        <span>🤟</span>
+        <span>Our staff is ASL proficient — we proudly serve the deaf and hard-of-hearing community</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATING -->
+<section class="rating-section">
+  <div class="stars">★★★★½</div>
+  <h2>Rated 4.5 Stars on Yelp</h2>
+  <p>Trusted by 88+ customers in the Lincoln Park neighborhood</p>
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">4.5/5</div><div class="label">Average Rating</div></div>
+    <div class="stat-box"><div class="num">88+</div><div class="label">Reviews</div></div>
+    <div class="stat-box"><div class="num">#1</div><div class="label">Local Choice</div></div>
+  </div>
+</section>
+
+<!-- HOURS & LOCATION -->
+<section class="location" id="location">
+  <div class="section-header">
+    <div class="label">Visit Us</div>
+    <h2>Hours & Location</h2>
+    <p>Located in the heart of DePaul / Lincoln Park</p>
+  </div>
+  <div class="location-grid">
+    <div class="loc-card">
+      <h3>🕐 Business Hours</h3>
+      <table class="hours-table">
+        <tr><td class="day">Monday – Friday</td><td class="time">8:30 AM – 6:30 PM</td></tr>
+        <tr><td class="day">Saturday</td><td class="time">9:00 AM – 5:00 PM</td></tr>
+        <tr><td class="day">Sunday</td><td class="time closed">Closed</td></tr>
+      </table>
+    </div>
+    <div class="loc-card">
+      <h3>📍 Find Us</h3>
+      <ul class="contact-list">
+        <li>📍 1158 W Wrightwood Ave, Chicago, IL 60614</li>
+        <li>📞 <a href="tel:7735284250">(773) 528-4250</a></li>
+        <li>🚶 Walk-ins welcome — no appointment needed</li>
+      </ul>
+      <div class="payment-badge">💳 Apple Pay · Android Pay · All Major Credit Cards</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-wrap">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.5!2d-87.6585!3d41.9295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2d4a4c5b0f1%3A0x1234567890abcdef!2s1158+W+Wrightwood+Ave%2C+Chicago%2C+IL+60614!5e0!3m2!1sen!2sus!4v1" allowfullscreen loading="lazy"></iframe>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Ultimate Dry Cleaning</div>
+  <p>1158 W Wrightwood Ave, Chicago, IL 60614 · (773) 528-4250</p>
+  <p>Mon–Fri 8:30am–6:30pm · Sat 9am–5pm · Sun Closed</p>
+  <div class="cdg">Website by <a href="#">Corner Digital Group</a></div>
+</footer>
+
+</body>
+</html>
